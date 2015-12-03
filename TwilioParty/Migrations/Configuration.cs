@@ -3,16 +3,14 @@ using TwilioParty.Models;
 
 namespace TwilioParty.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<TwilioParty.Models.TwilioPartyContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(TwilioParty.Models.TwilioPartyContext context)

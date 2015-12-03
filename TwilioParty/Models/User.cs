@@ -10,7 +10,6 @@ namespace TwilioParty.Models
     public class User
     {
         [Key]
-        public int UserId { get; set; }
         [Display(Name = "Phone Number")]
         public string Number { get; set; }
         public string Message { get; set; }
