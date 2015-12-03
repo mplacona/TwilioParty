@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using TwilioParty.Models;
+
 namespace TwilioParty.Migrations
 {
     using System;
@@ -9,7 +12,7 @@ namespace TwilioParty.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(TwilioParty.Models.TwilioPartyContext context)
@@ -26,6 +29,14 @@ namespace TwilioParty.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            var prizes = new List<Prize>
+            {
+                new Prize { Name = "T-Shirt", Quantity = 300},
+                new Prize { Name = "Twilio Charger", Quantity = 30}
+            };
+
+            prizes.ForEach( p => context.Prizes.AddOrUpdate( s => s.Name, p));
+            context.SaveChanges();
         }
     }
 }

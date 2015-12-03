@@ -124,9 +124,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512032208538_First.cs" />
-    <Compile Include="Migrations\201512032208538_First.Designer.cs">
-      <DependentUpon>201512032208538_First.cs</DependentUpon>
+    <Compile Include="Migrations\201512032228504_InitialCreate.cs" />
+    <Compile Include="Migrations\201512032228504_InitialCreate.Designer.cs">
+      <DependentUpon>201512032228504_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512032236364_Seed.cs" />
+    <Compile Include="Migrations\201512032236364_Seed.Designer.cs">
+      <DependentUpon>201512032236364_Seed.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Prize.cs" />
@@ -191,8 +195,11 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201512032208538_First.resx">
-      <DependentUpon>201512032208538_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512032228504_InitialCreate.resx">
+      <DependentUpon>201512032228504_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512032236364_Seed.resx">
+      <DependentUpon>201512032236364_Seed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
