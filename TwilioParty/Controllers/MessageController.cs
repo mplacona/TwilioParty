@@ -40,5 +40,14 @@ namespace TwilioParty.Controllers
             }
             
         }
+
+        [HttpGet]
+        public ActionResult List()
+        {
+            var db = new TwilioPartyContext();
+            var users = db.Users.ToList();
+            ViewData.Model = users;
+            return View();
+        }
     }
 }
