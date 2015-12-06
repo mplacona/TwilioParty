@@ -10,9 +10,8 @@ namespace TwilioParty.Models
     public class User
     {
         [Key]
-        [Display(Name = "Phone Number")]
-        public string Number { get; set; }
-        public string Message { get; set; }
+        public string From { get; set; }
+        public string Body { get; set; }
 
         public int PrizeId { get; set; }
         public virtual Prize Prize { get; set; }
