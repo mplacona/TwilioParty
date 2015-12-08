@@ -12,6 +12,7 @@ namespace TwilioParty.Controllers
     public class MessageController : TwilioController
     {
         // GET: Message
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Index(User data)
         {
@@ -28,6 +29,7 @@ namespace TwilioParty.Controllers
                 if (prize != null)
                 {    
                     prize.Quantity = prize.Quantity - 1;
+                    db.SaveChanges();
 
                     var entry = new User { From = data.From, Body = data.Body, PrizeId = prize.PrizeId };
                     db.Users.Add(entry);
@@ -41,6 +43,7 @@ namespace TwilioParty.Controllers
             
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public ActionResult List()
         {
