@@ -32,7 +32,7 @@ namespace TwilioParty.Controllers
 
 
             // this is bad and will have to go
-            if (model.Email == "admin" && model.Password == "password")
+            if (model.Email == "admin@admin.com" && model.Password == "password")
             {
                 var identity = new ClaimsIdentity(new[] {
                 new Claim(ClaimTypes.Name, "Marcos"),

@@ -1,0 +1,17 @@
+﻿@model TwilioParty.Models.Prize
+@{
+    ViewBag.Title = "New prize";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@Html.ValidationSummary(true)
+@{ Html.EnableClientValidation(); }
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <br />
+    <p>
+        <button type="submit">Add new prize</button>
+    </p>
+}

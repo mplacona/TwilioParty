@@ -13,7 +13,8 @@ namespace TwilioParty.Models
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        [HiddenInput]
+        [HiddenInput(DisplayValue = false)]
+        [Display(AutoGenerateField = false)]
         public string ReturnUrl { get; set; }
     }
 }
