@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace TwilioParty.Controllers
 {
@@ -25,6 +21,12 @@ namespace TwilioParty.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [AllowAnonymous] 
+        public ActionResult WhatsUp()
+        {
+            return Content("Ahoy! I'm up!");
         }
     }
 }

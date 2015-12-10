@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using TwilioParty.Models;
 
 namespace TwilioParty.Controllers
 {
-    [AllowAnonymous]
     public class PrizeController : Controller
     {
         // GET: Prize

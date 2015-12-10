@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Twilio.TwiML;
 using Twilio.TwiML.Mvc;
@@ -12,7 +10,7 @@ namespace TwilioParty.Controllers
     public class MessageController : TwilioController
     {
         // GET: Message
-        [AllowAnonymous]
+        [AllowAnonymous] 
         [HttpPost]
         public ActionResult Index(User data)
         {
@@ -22,7 +20,7 @@ namespace TwilioParty.Controllers
                 var twiml = new TwilioResponse();
                 if (existingUserCount > 0)
                 {
-                    return TwiML(twiml.Message("You've already played"));
+                    return TwiML(twiml.Message("It seems you've already got a prize, but check this out for more goodies http://www.berlintechs.org/#party"));
                 }
                 // Get a random prize from DB
                 var prize = db.Prizes.Where(q => q.Quantity > 0).OrderBy(r => Guid.NewGuid()).Take(1).First();
@@ -35,7 +33,7 @@ namespace TwilioParty.Controllers
                     db.Users.Add(entry);
                     db.SaveChanges();
 
-                    return TwiML(twiml.Message("Congratulations you won a " + prize.Name));
+                    return TwiML(twiml.Message("Congratulations, you won a " + prize.Name + "! But that's not all you get, check this out http://www.berlintechs.org/#party"));
                 }
 
                 return Content("");
@@ -43,7 +41,6 @@ namespace TwilioParty.Controllers
             
         }
 
-        [AllowAnonymous]
         [HttpGet]
         public ActionResult List()
         {
